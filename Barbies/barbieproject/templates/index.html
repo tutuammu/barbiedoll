@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<div class="container">
+    <div class="row">
+        {% for i in smile_list %}
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{{i.img.url}}" class="card-img-top" alt="" height="250px">
+                <div class="card-body">
+                   <h4 class="card-title">{{i.name}}</h4>
+                   <p class="card-text">{{i.style}}</p>
+                   <h5 class ="card-price">{{i.price}}</h5>
+                   <a href="{% url 'barbieapp:update' i.id %}" class="btn btn-primary">Update</a>
+                   <a href="{% url 'barbieapp:deleted' i.id %}" class="btn btn-primary">Delete</a>
+                </div>
+             </div>
+        </div>
+   
+        {% endfor %}
+    </div>
+    <a href="{% url 'barbieapp:add'%}" class="btn btn-primary">Add Movie</a>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

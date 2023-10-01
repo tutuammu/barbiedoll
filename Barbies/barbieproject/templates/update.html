@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="name" value={{res.name}}><br>
+      <input type="text" name="price" value={{res.style}}><br>
+      <input type="text" name="style" value={{res.price}}><br>
+      <input type="file" name="img" value="{{res.img.url}}"><br>
+      <input type="submit">
+</form>
+{% endblock %}

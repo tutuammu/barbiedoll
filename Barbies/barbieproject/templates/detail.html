@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+ <div class="row">
+  <div class="col-md-6">
+<!--   <img src="{{ken.img.url}}" width='300' height='300'>-->
+  </div>
+<div class="col-md-6">
+<!--     <h4>{{ken.name}}</h4>-->
+<!--     <h5>{{ken.style}}</h5>-->
+<!--     <h6>{{ken.price}}</h6><br>-->
+     <a class="btn btn-warning" href="{% url 'barbieapp:update' ken.id %}">Add</a>
+     <a class="btn btn-danger" href="{% url 'barbieapp:deleted' ken.id %}">Delete</a>
+ </div>
+  </div>
+</div>
+{% endblock %}
+
